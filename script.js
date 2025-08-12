@@ -14,33 +14,30 @@ const link2 = document.getElementById("link2");
 const link3 = document.getElementById("link3");
 
 link1.addEventListener('click', () =>{
-    scrollToElement('.header');
+    scrollToElement('header');
 });
 
 link2.addEventListener('click', () =>{
-    scrollToElement('.section');
+    scrollToElement('section');
 });
 
 link3.addEventListener('click', () =>{
-    scrollToElement('.content');
+    scrollToElement('content');
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const links = [
-        "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
-        "https://developer.mozilla.org/pt-BR/docs/Web/CSS",
-        "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
-    ];
+// Acesso as documentaçoês
+document.getElementById("btn-html").onclick = function () {
+  window.open("https://www.w3schools.com/html/default.asp", "_blank");
+};
 
-    let index = 0; // Índice para alternar os links
+document.getElementById("btn-css").onclick = function () {
+  window.open("https://www.w3schools.com/css/default.asp", "_blank");
+};
 
-    document.querySelectorAll(".btn").forEach(botao => {
-        botao.addEventListener("click", function() {
-            window.location.href = links[index]; // Redireciona para o link atual
-            index = (index + 1) % links.length; // Alterna ciclicamente entre os links
-        });
-    });
-});
+document.getElementById("btn-js").onclick = function () {
+  window.open("https://www.w3schools.com/js/default.asp", "_blank");
+};
+
 
 
 

@@ -20,55 +20,47 @@ body{
 }
 
 nav{
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 20px 40px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .nav-links{
     list-style: none;
     display: flex;
-    align-items: center;
     gap: 3rem;
+    margin: 0;
+    padding: 0;
 }
 
 .link a{
-    position: relative;
-    padding-bottom: 0.75rem;
-    color: #fff;
+  text-decoration: none;
+  color: #f1f1f1;
+  font-size: 1em;
+  transition: color 0.3s ease;
 }
 
-.link a::after{
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #1e40af;
-    transition: all 0.3s ease;
-}
-
-.link a:hover::after{
-    width: 70%;
+a:hover {
+  color: #253b77;
 }
 
 .btn{
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    color:#fff;
-    background-color: #2a2b2e;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background-color: #253b77;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover{
-    background-color: #5f6166;
+    background-color: #2f4b97;
 }
 
 .container{
@@ -89,11 +81,12 @@ header .blur{
 header{
     position: relative;
     padding-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    min-height: 20vh;
     align-items: center;
     gap: 2rem;
 }
+
 
 header.content h4{
     margin-bottom: 1rem;
@@ -119,22 +112,8 @@ header .content p{
     margin-bottom: 2rem;
     color: #ccc;
 }
-
-header .image{
-    position: relative;
-}
-
-header::before{
-    content: "S";
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 30rem;
-    font-weight: 400;
-    line-height: 20rem;
-    color: #1d4ed8;
-    opacity: 0.2;
-    z-index: -100;
+header h4{
+    color: #3450ce;
 }
 
 section .header{
@@ -146,7 +125,7 @@ section .header{
 }
 
 .sub-header{
-    max-width: 600px;
+    max-width: 400px;
     margin: auto;
     text-align: center;
     color: #ccc;
@@ -180,7 +159,7 @@ section .header{
 }
 
 .pricing .card i{
-    color: #ccc;
+    color: #3450ce;
     font-size: 1.5rem;
     margin-right: 0.3rem;
 }
@@ -224,53 +203,43 @@ section .header{
 
 }
 
-
-footer .container{
-    position: relative;
-    padding: 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #1e1e1e, #3b3b3b);
-    color: white;
+footer.container {
+  position: relative;
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+  padding: 60px 30px;
+  text-align: center;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
-footer .column{
-    position: relative;
-    z-index: 2;
+
+/* Conteúdo principal */
+footer .column {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-footer .blur {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.2);
-    filter: blur(50px);
-    border-radius: 50%;
+footer .column p {
+  font-size: 1.2em;
+ margin-bottom: 20px;
 }
 
-footer .blur:nth-child(1) {
-    top: -30px;
-    left: 20%;
+/* Linha decorativa */
+footer .line-footer {
+  width: 80px;
+  height: 3px;
+  background-color: #253b77;
+  margin: 0 auto 0px auto;
+  border-radius: 2px;
 }
 
-.line-footer{
-        width: 80%;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.3);
-    margin: 10px auto;
-}
-
-footer .column p{
-    color: #fff;
-    text-align: center;
-}
-
-.copyright{
-    max-width: 1200px;
-    margin: auto;
-    padding: 1rem;
-    color: #fff;
-    font-size: 0.8rem;
-    text-align: center;
+/* Copyright */
+footer .copyright {
+  font-size: 0.9em;
+  opacity: 0.7;
 }
 
 @media (width < 900px){
@@ -286,20 +255,31 @@ footer .column p{
     footer{
         grid-template-columns: 1fr 200px;
     }
-
 }
 
-@media (width < 600px){
-    header::before{
-        display: none;
-    }
-    
-    .pricing{
-        grid-template-columns: repeat(1, 1fr);
-    }
+@media (width < 768px){
 
-    footer{
-        grid-template-columns: 1fr 150px;
-        
-    }
+    nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .btn {
+    margin-top: 20px;
+    align-self: flex-start;
+  }
+
+  .pricing {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  footer {
+    grid-template-columns: 1fr 150px;
+  }
 }
